@@ -2,6 +2,14 @@
 
 This document provides details on how to interact with the Merchant API using cURL commands for various operations such as signup, login, retrieving risk scores, and rotating the API key.
 
+## Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 14+)
+- [MongoDB](https://www.mongodb.com/) (running locally or remotely)
+- [Postman](https://www.postman.com/) or `curl` for API testing
+
 ## API Endpoints
 
 ### 1. Signup a Merchant
