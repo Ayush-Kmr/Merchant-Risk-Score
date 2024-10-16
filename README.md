@@ -20,3 +20,15 @@ curl --location 'http://localhost:8000/api/v1/merchant/signup' \
     "passwordUpdated": "2024-09-20T08:45:00Z",
     "country": "India"
 }'
+
+### 2.  Login a Merchant
+Use the following cURL command to login a merchant:
+
+```bash
+curl --location 'http://localhost:8000/api/v1/merchant/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "username": "merchant124",
+    "password": "securePassword123"
+}'
+
