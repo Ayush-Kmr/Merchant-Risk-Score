@@ -32,3 +32,20 @@ curl --location 'http://localhost:8000/api/v1/merchant/login' \
     "password": "securePassword123"
 }'
 
+### 3. Get Risk Score
+Once logged in, use the following command to retrieve the risk score. Make sure to replace the Authorization token with the one obtained during login.
+```bash
+curl --location 'http://localhost:8000/api/v1/merchant/risk-score' \
+--header 'Authorization: Bearer <your_jwt_token_here>'
+
+### 4. Rotate API Key
+To rotate the API key, use the following command. Again, replace the Authorization token with your actual token.
+```bash
+curl --location --request POST 'http://localhost:8000/api/v1/merchant/rotate-api-key' \
+--header 'Authorization: Bearer <your_jwt_token_here>'
+
+
+This structure ensures the code blocks are properly formatted, making it easier to read and execute. You can copy and paste this directly into your `README.md` file.
+
+
+
