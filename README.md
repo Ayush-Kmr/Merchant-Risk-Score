@@ -59,4 +59,6 @@ curl --location --request POST 'http://localhost:8000/api/v1/merchant/rotate-api
 This structure ensures the code blocks are properly formatted, making it easier to read and execute. You can copy and paste this directly into your `README.md` file.
 
 
+cf8694e38be3e4c7aae85a03633bf5032328a0da5792afc01ca4c9edb0e2eb73
+
 
