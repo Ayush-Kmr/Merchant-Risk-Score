@@ -1,12 +1,30 @@
 const express = require("express");
-const MerchantController = require("../controllers/MerchantController");
+const router = express.Router();
+const authController = require("../controllers/authController");
+const riskController = require("../controllers/riskController");
+const clientController = require("../controllers/ClientIdAndSecretContoller");
+const updatePasswordController = require("../controllers/updatePasswordController");
+const { searchAndValidateKey } = require("../controllers/searchController");
 const auth = require("../middleware/auth");
 
-const router = express.Router();
+// Authentication routes
+router.post("/signup", authController.signup);
+router.post("/login", authController.login);
 
-router.post("/login", MerchantController.login);
-router.post("/signup", MerchantController.signup); // to signup merchant for //for testing
-router.get("/risk-score", auth, MerchantController.getRiskScore);
-router.post("/rotate-api-key", auth, MerchantController.rotateApiKey);
+// Risk management routes
+router.get("/risk-score", auth, riskController.getRiskScore);
+
+// Update Password
+router.post("/update-password", auth, updatePasswordController.updatePassword);
+
+// Generate ClientId and Client Secret
+router.post(
+  "/generate-client-credentials",
+  auth,
+  clientController.generateClientIdAndSecret
+);
+
+// POST route to trigger GitHub search and validation
+router.post("/search", searchAndValidateKey);
 
 module.exports = router;

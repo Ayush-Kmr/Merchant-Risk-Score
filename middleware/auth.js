@@ -10,12 +10,15 @@ const auth = (req, res, next) => {
   }
 
   try {
+    console.log("Token:", token); // Log the token
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.merchantId = decoded.id;
+    console.log("Decoded Token:", decoded); // Log the decoded token
 
+    req.merchantId = decoded.id;
+    console.log("Merchant ID from token:", req.merchantId); // Log the merchant ID
     next();
   } catch (error) {
-    console.error(error);
+    console.error("JWT Error:", error); // Log any errors
     res.status(401).json({ message: "Invalid or expired token" });
   }
 };
